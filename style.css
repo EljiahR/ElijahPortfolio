@@ -1,0 +1,198 @@
+:root {
+  --label-height: 23px;
+  --folder-border: 2px solid black;
+  --folder-color: white;
+  --folder-highlight: yellow;
+  --folder-raise-height: 40px;
+  --folder-seperation: 5px;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  box-sizing: border-box;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, 40px);
+  grid-template-areas:
+    "item-10"
+    "item-9"
+    "item-8"
+    "item-7"
+    "item-6"
+    "item-5"
+    "item-4"
+    "item-3"
+    "item-2"
+    "item-1";
+
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20vh;
+
+
+
+  justify-items: center;
+  align-items: center;
+  border: 1px solid black;
+  padding-top: 150px;
+  height: 600px;
+  width: 70vw;
+}
+
+#container>.folder:nth-child(10) {
+  grid-area: item-10;
+}
+
+#container>.folder:nth-child(9) {
+  grid-area: item-9;
+  z-index: 1;
+}
+
+#container>.folder:nth-child(8) {
+  grid-area: item-8;
+  z-index: 2;
+}
+
+#container>.folder:nth-child(7) {
+  grid-area: item-7;
+  z-index: 3;
+}
+
+#container>.folder:nth-child(6) {
+  grid-area: item-6;
+  z-index: 4;
+}
+
+#container>.folder:nth-child(5) {
+  grid-area: item-5;
+  z-index: 5;
+}
+
+#container>.folder:nth-child(4) {
+  grid-area: item-4;
+  z-index: 6;
+}
+
+#container>.folder:nth-child(3) {
+  grid-area: item-3;
+  z-index: 7;
+}
+
+#container>.folder:nth-child(2) {
+  grid-area: item-2;
+  z-index: 8;
+}
+
+#container>.folder:nth-child(1) {
+  grid-area: item-1;
+  z-index: 9;
+}
+
+/* Setting label positions */
+
+#container>.folder:nth-child(1)>.label {
+  left:10px
+}
+
+#container>.folder:nth-child(2)>.label {
+  left:60px
+}
+
+#container>.folder:nth-child(3)>.label {
+  left:110px
+}
+
+#container>.folder:nth-child(4)>.label {
+  left:160px
+}
+
+#container>.folder:nth-child(5)>.label {
+  left:210px
+}
+
+#container>.folder:nth-child(6)>.label {
+  left:10px
+}
+
+#container>.folder:nth-child(7)>.label {
+  left:60px
+}
+
+#container>.folder:nth-child(8)>.label {
+  left:110px
+}
+
+#container>.folder:nth-child(9)>.label {
+  left:160px
+}
+
+#container>.folder:nth-child(10)>.label {
+  left:210px
+}
+
+
+.folder {
+
+  text-align: center;
+  height: 300px;
+  width: 400px;
+  padding: 0px;
+  transition: 0.1s margin;
+}
+
+.folder .label {
+  position: relative;
+  top: var( --label-height);
+  height: 20px;
+  padding: 0;
+  width: 80px;
+  border: var(--folder-border);
+  border-bottom: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--folder-color);
+  z-index: 12;
+}
+.folder .label p {
+  padding: 0;
+  margin: 1px;
+}
+
+/* Raising up sheets on focus/hover */
+.folder:hover, .folder:has(.label:focus) {
+  margin-bottom: var(--folder-raise-height);
+}
+
+/* Highlighting selected folder */
+.folder:hover>.label, .folder:hover>.body, .folder:has(.label:focus)>.label, .folder:has(.label:focus)>.body{
+  border-color: var(--folder-highlight);
+}
+
+.folder:hover + .folder{
+  margin-top: calc(var(--folder-seperation)*-1);
+}
+
+.folder:has(+ .folder:hover) {
+  margin-top: var(--folder-seperation);
+}
+
+
+.folder .body {
+  position: relative;
+  top: var( --label-height);
+  height: 100%;
+  width: 100%;
+  border: var(--folder-border);
+  border-radius: 10px;
+  background-color: var(--folder-color);
+}
+
+.folder:onclick {
+  margin-bottom: 100px !important;
+}

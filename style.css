@@ -1,21 +1,58 @@
 :root {
-  --label-height: 23px;
-  --folder-border: 2px solid black;
-  --folder-color: white;
+  --label-height: -23px;
+  --folder-border: 1px solid black;
+  --folder-color: #eccea7;
   --folder-highlight: yellow;
   --folder-raise-height: 40px;
   --folder-seperation: 5px;
+  --cabinet-front-width: 500px;
+  --cabinet-inside-width: 450px;
+  --cabinet-color: lightgrey;
+  --cabinet-inside-position: 100px;
 }
 
 html {
   height: 100%;
   width: 100%;
 }
-body {
+
+* {
   box-sizing: border-box;
 }
 
-#container {
+#cabinet-outside {
+  height:400px;
+  width: 500px;
+  border: 3px solid red;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+}
+
+#cabinet-front {
+  width: var(--cabinet-front-width);
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  background-color: var(--cabinet-color);
+  position: relative;
+  top: -280px;
+  z-index: 12;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+
+}
+
+#cabinet-front-label {
+  height: 20px;
+  width: 40px;
+  border: 5px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cabinet-inside {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(10, 40px);
@@ -33,114 +70,111 @@ body {
 
   margin-right: auto;
   margin-left: auto;
-  margin-top: 20vh;
-
-
 
   justify-items: center;
   align-items: center;
   border: 1px solid black;
-  padding-top: 150px;
+  margin-top: var(--cabinet-inside-position);
   height: 600px;
-  width: 70vw;
+  width: var(--cabinet-inside-width);
 }
 
-#container>.folder:nth-child(10) {
+#cabinet-inside>.folder:nth-child(10) {
   grid-area: item-10;
 }
 
-#container>.folder:nth-child(9) {
+#cabinet-inside>.folder:nth-child(9) {
   grid-area: item-9;
   z-index: 1;
 }
 
-#container>.folder:nth-child(8) {
+#cabinet-inside>.folder:nth-child(8) {
   grid-area: item-8;
   z-index: 2;
 }
 
-#container>.folder:nth-child(7) {
+#cabinet-inside>.folder:nth-child(7) {
   grid-area: item-7;
   z-index: 3;
 }
 
-#container>.folder:nth-child(6) {
+#cabinet-inside>.folder:nth-child(6) {
   grid-area: item-6;
   z-index: 4;
 }
 
-#container>.folder:nth-child(5) {
+#cabinet-inside>.folder:nth-child(5) {
   grid-area: item-5;
   z-index: 5;
 }
 
-#container>.folder:nth-child(4) {
+#cabinet-inside>.folder:nth-child(4) {
   grid-area: item-4;
   z-index: 6;
 }
 
-#container>.folder:nth-child(3) {
+#cabinet-inside>.folder:nth-child(3) {
   grid-area: item-3;
   z-index: 7;
 }
 
-#container>.folder:nth-child(2) {
+#cabinet-inside>.folder:nth-child(2) {
   grid-area: item-2;
   z-index: 8;
 }
 
-#container>.folder:nth-child(1) {
+#cabinet-inside>.folder:nth-child(1) {
   grid-area: item-1;
   z-index: 9;
 }
 
 /* Setting label positions */
 
-#container>.folder:nth-child(1)>.label {
-  left:10px
+#cabinet-inside>.folder:nth-child(1)>.label {
+  left: 10px
 }
 
-#container>.folder:nth-child(2)>.label {
-  left:60px
+#cabinet-inside>.folder:nth-child(2)>.label {
+  left: 60px
 }
 
-#container>.folder:nth-child(3)>.label {
-  left:110px
+#cabinet-inside>.folder:nth-child(3)>.label {
+  left: 110px
 }
 
-#container>.folder:nth-child(4)>.label {
-  left:160px
+#cabinet-inside>.folder:nth-child(4)>.label {
+  left: 160px
 }
 
-#container>.folder:nth-child(5)>.label {
-  left:210px
+#cabinet-inside>.folder:nth-child(5)>.label {
+  left: 210px
 }
 
-#container>.folder:nth-child(6)>.label {
-  left:10px
+#cabinet-inside>.folder:nth-child(6)>.label {
+  left: 10px
 }
 
-#container>.folder:nth-child(7)>.label {
-  left:60px
+#cabinet-inside>.folder:nth-child(7)>.label {
+  left: 60px
 }
 
-#container>.folder:nth-child(8)>.label {
-  left:110px
+#cabinet-inside>.folder:nth-child(8)>.label {
+  left: 110px
 }
 
-#container>.folder:nth-child(9)>.label {
-  left:160px
+#cabinet-inside>.folder:nth-child(9)>.label {
+  left: 160px
 }
 
-#container>.folder:nth-child(10)>.label {
-  left:210px
+#cabinet-inside>.folder:nth-child(10)>.label {
+  left: 210px
 }
 
 
 .folder {
 
   text-align: center;
-  height: 300px;
+  height: 200px;
   width: 400px;
   padding: 0px;
   transition: 0.1s margin;
@@ -148,7 +182,7 @@ body {
 
 .folder .label {
   position: relative;
-  top: var( --label-height);
+  top: var(--label-height);
   height: 20px;
   padding: 0;
   width: 80px;
@@ -159,22 +193,27 @@ body {
   background-color: var(--folder-color);
   z-index: 12;
 }
+
 .folder .label p {
   padding: 0;
   margin: 1px;
 }
 
 /* Raising up sheets on focus/hover */
-.folder:hover, .folder:has(.label:focus) {
+.folder:hover,
+.folder:has(.label:focus) {
   margin-bottom: var(--folder-raise-height);
 }
 
 /* Highlighting selected folder */
-.folder:hover>.label, .folder:hover>.body, .folder:has(.label:focus)>.label, .folder:has(.label:focus)>.body{
+.folder:hover>.label,
+.folder:hover>.body,
+.folder:has(.label:focus)>.label,
+.folder:has(.label:focus)>.body {
   border-color: var(--folder-highlight);
 }
 
-.folder:hover + .folder{
+.folder:hover+.folder {
   margin-top: calc(var(--folder-seperation)*-1);
 }
 
@@ -185,7 +224,7 @@ body {
 
 .folder .body {
   position: relative;
-  top: var( --label-height);
+  top: var(--label-height);
   height: 100%;
   width: 100%;
   border: var(--folder-border);

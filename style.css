@@ -8,7 +8,7 @@
   --cabinet-front-width: 500px;
   --cabinet-inside-width: 450px;
   --cabinet-color: lightgrey;
-  --cabinet-inside-position: -430px;
+  --cabinet-inside-position: -530px;
 }
 
 html {
@@ -18,6 +18,7 @@ html {
 
 * {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -74,7 +75,7 @@ body {
   background-color: var(--cabinet-color);
   position: relative;
   top: -180px;
-  z-index: 3;
+  z-index: 5;
   border: 1px solid black;
   display: flex;
   align-items: center;
@@ -107,17 +108,18 @@ body {
 
   margin-right: auto;
   margin-left: auto;
-  padding-top: 100px;
+  padding-top: 200px;
   justify-items: center;
   align-items: center;
   border: 1px solid black;
+  border-top: none;
   background-color: gray;
   margin-top: var(--cabinet-inside-position);
-  height: 600px;
+  height: 700px;
   width: var(--cabinet-inside-width);
   position: relative;
   z-index: 1;
-  transition: 0.2s;
+  transition: all 0.2s, z-index 0s;
 }
 
 .cabinet-inside>.folder:nth-child(10) {
@@ -276,4 +278,9 @@ body {
 
 .folder.selected {
   margin-bottom: 300px;
+}
+
+.cabinet-inside:has(+ .cabinet-front.open){
+  z-index: 4;
+  transition: all 0.2s, z-index 0s 0.2s;
 }

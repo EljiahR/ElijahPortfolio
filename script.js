@@ -1,6 +1,6 @@
 const r = document.querySelector(":root");
-const cabinetClosedPosition = "-430px";
-const cabinetOpenPosition = "100px";
+const cabinetClosedPosition = "-530px";
+const cabinetOpenPosition = "-50px";
 
 
 const cabinetFronts = document.getElementsByClassName("cabinet-front");
@@ -10,7 +10,11 @@ for (let i = 0; i < cabinetFronts.length; i++) {
   cabinetFronts.item(i).addEventListener("click", () => {
     r.style.setProperty("--cabinet-inside-position", cabinetsAreOpen[i] ? cabinetClosedPosition : cabinetOpenPosition);
     cabinetsAreOpen[i] = !cabinetsAreOpen[i];
-
+    if (cabinetFronts.item(i).classList.contains("open")) {
+      cabinetFronts.item(i).classList.remove("open");
+    } else {
+      cabinetFronts.item(i).classList.add("open");
+    }
     if(previousFolder < folders.length) {
       folders.item(previousFolder).classList.remove("selected");
     }  

@@ -8,7 +8,7 @@
   --cabinet-front-width: 500px;
   --cabinet-inside-width: 450px;
   --cabinet-color: lightgrey;
-  --cabinet-inside-position: -530px;
+  --cabinet-inside-position: -470px;
 }
 
 html {
@@ -34,7 +34,7 @@ body {
   margin-top: 5vh;
 
   display: grid;
-  grid-template-rows: 100px 100px 300px;
+  grid-template-rows: 100px 50px 350px;
   grid-template-columns: 1fr;
   justify-content: center;
 }
@@ -77,17 +77,42 @@ body {
   top: -180px;
   z-index: 5;
   border: 1px solid black;
-  display: flex;
-  align-items: center;
-
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .cabinet-front-label {
-  height: 20px;
-  width: 40px;
-  border: 5px solid black;
+  height: 90px;
+  width: 200px;
+  border: 5px solid #666666;
+  background-color: white;
   margin-left: auto;
   margin-right: auto;
+  align-self: center;
+  text-align: center;
+}
+
+.cabinet-front-controls {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns:1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.cabinet-front-switch {
+  width: 20px;
+  height: 20px;
+  background-color: #666666;
+  align-self: center;
+  justify-self: right;
+}
+
+.cabinet-front-handle {
+  width: 150px;
+  height: 20px;
+  background-color: #666666;
+  align-self: center;
 }
 
 .cabinet-inside {
@@ -108,14 +133,14 @@ body {
 
   margin-right: auto;
   margin-left: auto;
-  padding-top: 200px;
+  padding-top: 150px;
   justify-items: center;
   align-items: center;
   border: 1px solid black;
   border-top: none;
   background-color: gray;
   margin-top: var(--cabinet-inside-position);
-  height: 700px;
+  height: 650px;
   width: var(--cabinet-inside-width);
   position: relative;
   z-index: 1;

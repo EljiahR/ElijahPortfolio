@@ -1,6 +1,6 @@
 const r = document.querySelector(":root");
-const cabinetClosedPosition = "-530px";
-const cabinetOpenPosition = "-50px";
+const cabinetClosedPosition = "-470px";
+const cabinetOpenPosition = "0px";
 
 
 const cabinetFronts = document.getElementsByClassName("cabinet-front");

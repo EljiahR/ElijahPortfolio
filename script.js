@@ -6,9 +6,11 @@ const cabinetOpenPosition = "0px";
 const cabinetFronts = document.getElementsByClassName("cabinet-front");
 const cabinetsAreOpen = Array(cabinetFronts.length).fill(false)
 
+console.log(cabinetFronts);
+console.log(cabinetsAreOpen);
+
 for (let i = 0; i < cabinetFronts.length; i++) {
   cabinetFronts.item(i).addEventListener("click", () => {
-    r.style.setProperty("--cabinet-inside-position", cabinetsAreOpen[i] ? cabinetClosedPosition : cabinetOpenPosition);
     cabinetsAreOpen[i] = !cabinetsAreOpen[i];
     if (cabinetFronts.item(i).classList.contains("open")) {
       cabinetFronts.item(i).classList.remove("open");
@@ -18,6 +20,8 @@ for (let i = 0; i < cabinetFronts.length; i++) {
     if(previousFolder < folders.length) {
       folders.item(previousFolder).classList.remove("selected");
     }  
+    console.log(cabinetFronts);
+    console.log(cabinetsAreOpen);
   })
 }
 

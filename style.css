@@ -6,9 +6,12 @@
   --folder-raise-height: 40px;
   --folder-seperation: 5px;
   --cabinet-front-width: 500px;
+  --cabinet-width: 525px;
   --cabinet-inside-width: 450px;
   --cabinet-color: lightgrey;
   --cabinet-inside-position: -470px;
+  --cabinet-label-shadow:rgb(120, 120, 120, 0.5);
+  --cabinet-border-radius: 2px;
 }
 
 html {
@@ -25,17 +28,20 @@ body {
   background-color: white;
 }
 
+/* Cabinet shananigans */
+
 .cabinet-outside {
   height: 400px;
-  width: 500px;
-  border: 3px solid red;
+  width: var(--cabinet-width);
+  background-color: var(--cabinet-color);
   margin-left: auto;
   margin-right: auto;
   margin-top: 5vh;
-
+  border-radius: 2px;
+  box-shadow: #7a7a7a 5px 5px 5px;
   display: grid;
   grid-template-rows: 100px 50px 350px;
-  grid-template-columns: 1fr;
+  grid-template-columns: 500px;
   justify-content: center;
 }
 
@@ -77,20 +83,84 @@ body {
   top: -180px;
   z-index: 5;
   border: 1px solid black;
+  border-radius: 5px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
 }
 
-.cabinet-front-label {
-  height: 90px;
+.cabinet-front.open{
+  box-shadow: #7a7a7a 5px 5px 5px;
+}
+
+/* 
+    !!!!! CONTENT WARNING !!!!!!
+ I wanted the label to be inside the frame
+    , proceed with caution
+*/
+.cabinet-front-label-top {
+  background-color: grey;
+  border-top-left-radius: var(--cabinet-border-radius);
+  border-top-right-radius: var(--cabinet-border-radius);
+  box-shadow: var(--cabinet-label-shadow) 0px 5px 5px;
+  height: 10px;
+  width:200px;
+  position: relative;
+  top:-70px;
+  left: -10px;
+}
+
+.cabinet-front-label-left {
+  background-color: grey;
+  
+  box-shadow: var(--cabinet-label-shadow) 5px 0px 5px;
+  height: 62px;
+  width:10px;
+  position: relative;
+  top:-70px;
+  left: -10px;
+  z-index: 2;
+}
+.cabinet-front-label-bottom {
+  background-color: grey;
+  border-bottom-left-radius: var(--cabinet-border-radius);
+  border-bottom-right-radius: var(--cabinet-border-radius);
+  height:10px;
   width: 200px;
-  border: 5px solid #666666;
+  position: relative;
+  top: -70px;
+  left: -10px;
+}
+.cabinet-front-label-right {
+  background-color: grey;
+  
+  height: 62px;
+  width:10px;
+  position: relative;
+  top:-142px;
+  left: 180px;
+  z-index: 2;
+}
+
+.cabinet-front-label-connecting-box-shadow {
+  box-shadow: var(--cabinet-label-shadow) 5px 5px 5px;
+  height: 82px;
+  width: 200px;
+  position:relative;
+  top:-214px;
+  left: -10px
+}
+
+.cabinet-front-label-inside {
   background-color: white;
+  height: 70px;
+  width: 180px;
+  border-radius: 2px;
+  margin-top: -10px;
   margin-left: auto;
   margin-right: auto;
-  align-self: center;
   text-align: center;
+  align-self: center;
 }
 
 .cabinet-front-controls {
@@ -104,15 +174,19 @@ body {
   width: 20px;
   height: 20px;
   background-color: #666666;
+  border-radius: 2px;
   align-self: center;
   justify-self: right;
+  box-shadow: #7a7a7a 5px 5px 5px;
 }
 
 .cabinet-front-handle {
   width: 150px;
   height: 20px;
   background-color: #666666;
+  border-radius: 2px;
   align-self: center;
+  box-shadow: #7a7a7a 5px 5px 5px;
 }
 
 .cabinet-inside {
@@ -308,4 +382,14 @@ body {
 .cabinet-inside:has(+ .cabinet-front.open){
   z-index: 4;
   transition: all 0.2s, z-index 0s 0.2s;
+  margin-top: 0px;
+}
+
+/* End Cabinet shananigans */
+
+#projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap:10px;
 }

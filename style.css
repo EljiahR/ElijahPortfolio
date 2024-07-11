@@ -9,7 +9,6 @@
   --cabinet-width: 525px;
   --cabinet-inside-width: 450px;
   --cabinet-color: lightgrey;
-  --cabinet-inside-position: -470px;
   --cabinet-label-shadow:rgb(120, 120, 120, 0.5);
   --cabinet-border-radius: 2px;
 }
@@ -213,7 +212,7 @@ body {
   border: 1px solid black;
   border-top: none;
   background-color: gray;
-  margin-top: var(--cabinet-inside-position);
+  margin-top: -470px;
   height: 650px;
   width: var(--cabinet-inside-width);
   position: relative;
@@ -393,3 +392,19 @@ body {
   grid-template-rows: 1fr;
   gap:10px;
 }
+
+/* FOR MOBILE POSSIBLY?
+#cs-cabinet{
+  z-index:10;
+  position: relative;
+  top:35px
+}
+
+#projects {
+  display: grid;
+  height: 800px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  gap:0px;
+}
+*/

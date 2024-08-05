@@ -11,6 +11,14 @@
   --cabinet-color: lightgrey;
   --cabinet-label-shadow:rgb(120, 120, 120, 0.5);
   --cabinet-border-radius: 2px;
+ 
+  --theme-main: #153448;
+  --theme-secondary: #3C5B6F;
+  --theme-tertiary:#948979;
+  --theme-background:#DFD0B8;
+  --font-color-main: #f9faf8;
+  --font-color-secondary: #1f2937;
+  --color2: #f9faf8;
 }
 
 html {
@@ -26,23 +34,33 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: var(--theme-background);
 }
 
-/* Hero section */
+#navbar {
+  height:50px;
+  width: 100vw;
+  position:fixed;
+  top:0;
+  background-color: var(--theme-secondary);
+  z-index:15;
+}
+
 #hero {
-  background-color: #c1c1f0;
+  background-color: var(--theme-main);
   margin: 0px;
+  margin-top:50px;
   position: relative;
   z-index: 14;
   width: 100vw;
-  height: 100vh;
+  height: 300px;
 }
 
 #footer {
   height:20px;
+  background-color: var(--theme-secondary);
 }
-/* End Hero section */
+
 
 /* Cabinet shananigans */
 
@@ -73,7 +91,7 @@ body {
   top: -350px;
   grid-row-start: 1;
   grid-row-end: 2;
-  background-color: white;
+  background-color: var(--theme-background);
   z-index: 2;
 }
 

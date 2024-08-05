@@ -42,8 +42,7 @@ for (let i = 0; i < cabinetFronts.length; i++) {
     if (previousFolder < folders.length) {
       folders.item(previousFolder).classList.remove("selected");
     }
-    console.log(cabinetFronts);
-    console.log(cabinetsAreOpen);
+
   })
 }
 

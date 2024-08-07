@@ -6,7 +6,7 @@
   --folder-raise-height: 40px;
   --folder-seperation: 5px;
   --cabinet-front-width: 500px;
-  --cabinet-width: 525px;
+  --cabinet-width: min(80%, 525px); /* fix this*/
   --cabinet-inside-width: 450px;
   --cabinet-color: lightgrey;
   --cabinet-label-shadow:rgb(120, 120, 120, 0.5);
@@ -66,13 +66,14 @@ body {
 
 .cabinet {
   margin: 0px;
+  width: var(--cabinet-width);
 }
 
 
 
 .cabinet-outside {
   height: 400px;
-  width: var(--cabinet-width);
+  width: 100%;
   background-color: var(--cabinet-color);
   margin-left: auto;
   margin-right: auto;
@@ -81,7 +82,7 @@ body {
   box-shadow: #7a7a7a 5px 5px 5px;
   display: grid;
   grid-template-rows: 100px 50px 350px;
-  grid-template-columns: 500px;
+  grid-template-columns: calc(100% - 25px);
   justify-content: center;
 }
 
@@ -114,7 +115,7 @@ body {
 }
 
 .cabinet-front {
-  width: var(--cabinet-front-width);
+  width: calc(100% - 25px);
   margin-left: auto;
   margin-right: auto;
   height: 300px;
@@ -256,7 +257,7 @@ body {
   background-color: gray;
   margin-top: -470px;
   height: 650px;
-  width: var(--cabinet-inside-width);
+  width: calc(100% - 48px);
   position: relative;
   z-index: 1;
   transition: all 0.2s, z-index 0s;
@@ -314,44 +315,32 @@ body {
 
 /* Setting label positions */
 
-.cabinet-inside>.folder:nth-child(1)>.label {
-  left: 10px
+.cabinet-inside>.folder:nth-child(1)>.label, .cabinet-inside>.folder:nth-child(8)>.label {
+  left: 2.5%
 }
 
-.cabinet-inside>.folder:nth-child(2)>.label {
-  left: 60px
+.cabinet-inside>.folder:nth-child(2)>.label, .cabinet-inside>.folder:nth-child(9)>.label {
+  left: 15%;
 }
 
-.cabinet-inside>.folder:nth-child(3)>.label {
-  left: 110px
+.cabinet-inside>.folder:nth-child(3)>.label, .cabinet-inside>.folder:nth-child(10)>.label {
+  left: 27.5%;
 }
 
-.cabinet-inside>.folder:nth-child(4)>.label {
-  left: 160px
+.cabinet-inside>.folder:nth-child(4)>.label, .cabinet-inside>.folder:nth-child(11)>.label {
+  left: 40%;
 }
 
-.cabinet-inside>.folder:nth-child(5)>.label {
-  left: 210px
+.cabinet-inside>.folder:nth-child(5)>.label, .cabinet-inside>.folder:nth-child(12)>.label {
+  left: 52.5%;
 }
 
-.cabinet-inside>.folder:nth-child(6)>.label {
-  left: 10px
+.cabinet-inside>.folder:nth-child(6)>.label, .cabinet-inside>.folder:nth-child(13)>.label {
+  left: 65%;
 }
 
-.cabinet-inside>.folder:nth-child(7)>.label {
-  left: 60px
-}
-
-.cabinet-inside>.folder:nth-child(8)>.label {
-  left: 110px
-}
-
-.cabinet-inside>.folder:nth-child(9)>.label {
-  left: 160px
-}
-
-.cabinet-inside>.folder:nth-child(10)>.label {
-  left: 210px
+.cabinet-inside>.folder:nth-child(7)>.label, .cabinet-inside>.folder:nth-child(14)>.label {
+  left: 77.5%;
 }
 
 
@@ -359,7 +348,7 @@ body {
 
   text-align: center;
   height: 200px;
-  width: 400px;
+  width: calc(100% - 50px);
   padding: 0px;
   transition: 0.1s margin;
 }
@@ -369,7 +358,7 @@ body {
   top: var(--label-height);
   height: 20px;
   padding: 0;
-  width: 80px;
+  width: 20%;
   border: var(--folder-border);
   border-bottom: none;
   border-top-left-radius: 10px;
@@ -449,10 +438,10 @@ body {
   .cabinet-divider {
     height: 20px;
     width: var(--cabinet-width);
+    flex: 0 0 auto;
     background-color: var(--cabinet-color);
     z-index:11;
-    margin-left: 10px;
-    margin-right: 10px;
+    
     border-top: 2px solid #b0b0b0;
     border-bottom: 2px solid #b0b0b0;
   }

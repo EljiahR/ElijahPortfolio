@@ -1,4 +1,7 @@
 const r = document.querySelector(":root");
+
+const contactDiv = document.getElementById("contact-div")
+
 const cabinetClosedPosition = "-470px";
 const cabinetOpenPosition = "0px";
 const mediaQuery = window.matchMedia("(max-width: 1067px)");
@@ -65,3 +68,20 @@ for (let i = 0; i < folders.length; i++) {
 
   })
 }
+
+const scrollToTop = () => {
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+const toggleContact = () => {
+  if(contactDiv.style.display == "block") {
+    contactDiv.style.display = "none";
+  } else {
+    contactDiv.style.display = "block"
+  }
+  
+}
+
+contactDiv.addEventListener("click", e => {
+  if(e.target == contactDiv) toggleContact();
+})

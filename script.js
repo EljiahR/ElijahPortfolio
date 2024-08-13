@@ -119,7 +119,8 @@ const projectOverlay = document.getElementById("project-overlay");
 const toggleProjectOverlay = (e) => {
   if (e.target == projectOverlay) {
     currentFolder.classList.remove("selected");
-    if (currentProject) currentProject.classList.remove("selected")
+    if (currentProject) currentProject.classList.remove("selected");
+    
   }
 }
 

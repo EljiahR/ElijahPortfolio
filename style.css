@@ -118,6 +118,14 @@ html {
   background: radial-gradient(circle, rgba(60, 91, 111, 1) 0%, rgba(21, 52, 72, 1) 52%);
 }
 
+#hero a:link {
+  color: var(--font-color-main);
+}
+
+#hero a:visited {
+  color: #b0b0b0;
+}
+
 #footer {
   height: 20px;
   background-color: var(--theme-secondary);

@@ -15,9 +15,31 @@
       <p>Home</p>
     </button>
     <div id="project-button-div">
-      <button class="navbar-button" disabled id="projects-button">
-        <p>Projects</p>
-      </button>
+      <div id="list-hider">
+        <button class="navbar-button" onclick="toggleShortcuts()" id="projects-button">
+          <p>Projects</p>
+        </button>
+      </div>
+      
+      <div id="project-shortcut-list">
+        <button onclick="displayProject(0)" tabindex="-1" class="project-shortcut">Excel Parser (BE)</button>
+        <button onclick="displayProject(1)" tabindex="-1" class="project-shortcut">Exercise Tracker</button>
+        <button onclick="displayProject(2)" tabindex="-1" class="project-shortcut">Shifts Logger</button>
+        <button onclick="displayProject(3)" tabindex="-1" class="project-shortcut">Phone Book</button>
+        <button onclick="displayProject(4)" tabindex="-1" class="project-shortcut">Drink Info</button>
+        <button onclick="displayProject(5)" tabindex="-1" class="project-shortcut">Coding Tracker</button>
+        <button onclick="displayProject(6)" tabindex="-1" class="project-shortcut">Habit Tracker</button>
+        <button onclick="displayProject(7)" tabindex="-1" class="project-shortcut">Excel Parser (FE)</button>
+        <button onclick="displayProject(8)" tabindex="-1" class="project-shortcut">Shopping Cart</button>
+        <button onclick="displayProject(9)" tabindex="-1" class="project-shortcut">Memory Card</button>
+        <button onclick="displayProject(10)" tabindex="-1" class="project-shortcut">CV Application</button>
+        <button onclick="displayProject(11)" tabindex="-1" class="project-shortcut">Battleship</button>
+        <button onclick="displayProject(12)" tabindex="-1" class="project-shortcut">To-do List</button>
+        <button onclick="displayProject(13)" tabindex="-1" class="project-shortcut">Restaurant</button>
+        <button onclick="displayProject(14)" tabindex="-1" class="project-shortcut">Etch-A-Sketch</button>
+        <button onclick="displayProject(15)" tabindex="-1" class="project-shortcut">Knight Travails</button>
+        <button onclick="displayProject(16)" tabindex="-1" class="project-shortcut">Portfolio</button>
+      </div>
     </div>
     <button class="navbar-button" onClick="toggleContact()">
       <p>Contact &sol; Resume</p>

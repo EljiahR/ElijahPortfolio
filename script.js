@@ -120,8 +120,39 @@ const toggleProjectOverlay = (e) => {
   if (e.target == projectOverlay) {
     currentFolder.classList.remove("selected");
     if (currentProject) currentProject.classList.remove("selected");
-    
+
   }
 }
 
 projectOverlay.addEventListener("click", toggleProjectOverlay);
+
+const projectListDiv = document.getElementById("project-shortcut-list");
+const projectShortcuts = document.getElementsByClassName("project-shortcut");
+
+const toggleShortcuts = () => {
+  if (projectListDiv.classList.contains("display-list")) {
+    projectListDiv.classList.remove("display-list");
+    for (let i = 0; i < projectShortcuts.length; i++) {
+      projectShortcuts.item(i).tabIndex = "-1"
+    }
+  } else {
+    projectListDiv.classList.add("display-list");
+    for (let i = 0; i < projectShortcuts.length; i++) {
+      projectShortcuts.item(i).tabIndex = "0";
+    }
+  }
+}
+
+const displayProject = (index) => {
+  if (previousFolder < folders.length){
+    folders.item(previousFolder).classList.remove("selected");
+    projects.item(previousFolder).classList.remove("selected");
+  }
+  
+
+  folders.item(index).classList.add("selected");
+  projects.item(index).classList.add("selected");
+  currentFolder = folders.item(index);
+  previousFolder = index;
+  toggleShortcuts();
+}

@@ -11,13 +11,15 @@
 <body>
   <div id="background"></div>
   <nav id="navbar">
-    <button onClick="scrollToTop()">
+    <button class="navbar-button" onClick="scrollToTop()">
       <p>Home</p>
     </button>
-    <button id="projects-button">
-      <p>Projects</p>
-    </button>
-    <button onClick="toggleContact()">
+    <div id="project-button-div">
+      <button class="navbar-button" disabled id="projects-button">
+        <p>Projects</p>
+      </button>
+    </div>
+    <button class="navbar-button" onClick="toggleContact()">
       <p>Contact &sol; Resume</p>
     </button>
   </nav>
@@ -27,7 +29,10 @@
         <h1>Elijah Reck</h1>
         <h3>Junior C#/Web Developer building robust and scalable web applications with modern technologies.</h3>
       </div>
-      <h4>Explore my projects below</h4>
+      <h4>Please explore my projects below, sorted between C# and web development. Most projects were done following
+        roadmaps provided by either <a href="https://www.thecsharpacademy.com/" target="_blank">The C# Academy</a> or <a
+          href="https://www.theodinproject.com/" target="_blank">The Odin Project</a> aside from the front and back end
+        of the Exel Parser project.</h4>
     </div>
     <div id="projects">
       <!-- Cabinet 1 -->
@@ -245,7 +250,7 @@
       <h3>Elijah Reck</h3>
 
       <h4>elijahreck@gmail.com</h4>
-      <button>Download Resume</button>
+      <button disabled>Download Resume</button>
     </div>
   </div>
   <div id="project-overlay">

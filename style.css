@@ -69,9 +69,17 @@ html {
   align-items: center;
 }
 
-#navbar>button {
+#navbar>* {
   width: 33.33%;
   height: 98%;
+}
+
+#project-button-div>button {
+  height: 100%;
+  width:100%
+}
+
+.navbar-button {
   background-color: var(--theme-secondary);
   color: var(--font-color-main);
   font-size: 1.1rem;
@@ -94,6 +102,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  gap: 20px;
   text-align: center;
 
   box-shadow: var(--theme-main) 5px 0px 10px;
@@ -103,8 +112,8 @@ html {
   position: relative;
   z-index: 14;
   width: 100%;
-  height: 350px;
-
+  min-height: 350px;
+  padding: 70px 20% 20px;
   background: rgb(60, 91, 111);
   background: radial-gradient(circle, rgba(60, 91, 111, 1) 0%, rgba(21, 52, 72, 1) 52%);
 }
@@ -121,7 +130,7 @@ html {
   margin-top: 50px;
   top: 0;
   left: 0;
-  z-index: 14;
+  z-index: 18;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -129,8 +138,8 @@ html {
 }
 
 .selection-background {
-  width: 80%;
-  height:150px;
+  width: min(80%, 400px);
+  height: 150px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
@@ -622,38 +631,39 @@ html {
 
 .project {
   display: none;
-  height:100%;
+  height: 100%;
   width: 100%;
-  
+
   flex-direction: column;
   justify-content: space-evenly;
 }
+
 .project.selected {
   display: flex;
 }
 
 #project-overlay {
-  
+
   position: fixed;
   bottom: 0;
   height: 0;
   width: 0;
-  top:0;
+  top: 0;
   /*background-color: rgba(0, 0, 0, 0.5);*/
-  
+
   opacity: 0;
   padding-top: 10%;
   z-index: 14;
-  transition: opacity 0.3s;
   
 }
 
 .project-background {
   padding: 20px;
   text-align: center;
-  width: 80%;
-  height: 80%;
-  margin-top: 10%;
+  width: min(80%, 400px);
+  height: min(calc(90% - 20px), 518px);
+  margin-top: 20px;
+  overflow-y: auto;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
@@ -664,17 +674,21 @@ html {
 
 /* I apologize for the following selectors*/
 
-#main-flow-wrapper:has(>#projects>.cabinet>.cabinet-outside>.cabinet-outside-bottom>.cabinet-inside>.folder.selected) + .contact-overlay + #project-overlay {
+#main-flow-wrapper:has(>#projects>.cabinet>.cabinet-outside>.cabinet-outside-bottom>.cabinet-inside>.folder.selected)+.contact-overlay+#project-overlay {
   height: 100%;
   width: 100%;
   display: block;
   opacity: 1;
-  
+  transition: opacity 0.3s;
 }
 
 /* End nonsense */
 
 @media(max-width: 1067px) {
+  #hero {
+    padding: none;
+  }
+
   #projects>.cabinet:not(:last-child)>.cabinet-outside {
     box-shadow: #7a7a7a 5px 0px 5px;
   }

@@ -47,6 +47,22 @@ html {
 
 }
 
+body {
+  width: 100%;
+  /*overflow-x: hidden;*/
+}
+
+main {
+  width: 300%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  transition: 0.3s;
+}
+
+
+
 #main-flow-wrapper {
   height: 100%;
   width: 100%;
@@ -60,7 +76,7 @@ html {
   position: fixed;
   top: 0;
   background-color: #d3d3d3;
-  z-index: 15;
+  z-index: 19;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: var(--theme-secondary) 5px 0px 5px;
@@ -84,7 +100,7 @@ html {
 
 #list-hider>button {
   height: 100%;
-  width:100%
+  width: 100%
 }
 
 .navbar-button {
@@ -102,8 +118,8 @@ html {
 #project-shortcut-list {
   height: 125px;
   width: 100%;
-  position:relative;
-  top:-126px;
+  position: relative;
+  top: -126px;
   z-index: -1;
   transition: 0.3s;
   overflow-y: auto;
@@ -112,7 +128,7 @@ html {
 
 #project-shortcut-list.display-list {
   top: 0;
-  
+
 }
 
 .project-shortcut {
@@ -684,7 +700,7 @@ html {
   opacity: 0;
   padding-top: 10%;
   z-index: 14;
-  
+
 }
 
 .project-background {

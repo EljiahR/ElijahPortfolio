@@ -5,6 +5,12 @@ const contactDiv = document.getElementById("contact-div")
 
 const mediaQuery = window.matchMedia("(max-width: 1067px)");
 
+
+const Pages = {
+  HOME: "home",
+  PROJECTS: "projects",
+  CONTACTS: "contacts"
+}
 /*
 const csProjects = [document.getElementById("cs-1"), document.getElementById("cs-2"), document.getElementById("cs-3"), document.getElementById("cs-4"), document.getElementById("cs-5"), document.getElementById("cs-6")]
 
@@ -144,15 +150,30 @@ const toggleShortcuts = () => {
 }
 
 const displayProject = (index) => {
-  if (previousFolder < folders.length){
+  if (previousFolder < folders.length) {
     folders.item(previousFolder).classList.remove("selected");
     projects.item(previousFolder).classList.remove("selected");
   }
-  
+
 
   folders.item(index).classList.add("selected");
   projects.item(index).classList.add("selected");
   currentFolder = folders.item(index);
   previousFolder = index;
   toggleShortcuts();
+}
+
+const mainDiv = document.getElementById("main");
+const changeDisplay = (pageToDisplay) => {
+  switch (pageToDisplay) {
+    case Pages.HOME:
+      mainDiv.style.marginLeft = "0px";
+      break;
+    case Pages.PROJECTS:
+      mainDiv.style.marginLeft = "-100%";
+      break;
+    case Pages.CONTACTS:
+      mainDiv.style.marginLeft = "-200%";
+      break;
+  }
 }

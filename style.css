@@ -23,14 +23,19 @@
   --color2: #f9faf8;
 }
 
-html {
+html,
+body {
   height: 100%;
+
   width: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
-  min-height: 100%;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
 * {
@@ -50,10 +55,6 @@ body {
   background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
   background-color: #f9e8d7;
 
-}
-
-body {
-  overflow-x: hidden;
 }
 
 main {
@@ -91,7 +92,7 @@ main {
   position: fixed;
   top: 0;
   background-color: #d3d3d3;
-  z-index: 19;
+  z-index: 30;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: var(--theme-secondary) 5px 0px 5px;
@@ -116,6 +117,10 @@ main {
 #list-hider>button {
   height: 100%;
   width: 100%
+}
+
+#page-2 {
+  padding-top: 100px;
 }
 
 .navbar-button {
@@ -184,7 +189,8 @@ main {
   background-color: var(--theme-secondary);
   box-shadow: var(--theme-secondary) -5px 0px 5px;
   position: relative;
-  bottom: 0;
+  bottom:0;
+  display: none;
 }
 
 .contact-overlay {
@@ -753,6 +759,8 @@ main {
   #hero {
     padding: none;
   }
+
+
 
   #projects>.cabinet:not(:last-child)>.cabinet-outside {
     box-shadow: #7a7a7a 5px 0px 5px;

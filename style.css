@@ -69,7 +69,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 }
 
 
@@ -710,7 +710,7 @@ main {
 
   opacity: 0;
   padding-top: 10%;
-  z-index: 14;
+  z-index: 20;
 
 }
 
@@ -731,10 +731,12 @@ main {
 
 /* I apologize for the following selectors*/
 
-#main-flow-wrapper:has(>#projects>.cabinet>.cabinet-outside>.cabinet-outside-bottom>.cabinet-inside>.folder.selected)+.contact-overlay+#project-overlay {
+#main:has(>#page-2>#projects>.cabinet>.cabinet-outside>.cabinet-outside-bottom>.cabinet-inside>.folder.selected)+#footer+.contact-overlay+#project-overlay {
   height: 100%;
   width: 100%;
-  display: block;
+  display: fixed;
+  top: 0;
+  left: 0;
   opacity: 1;
   transition: opacity 0.3s;
 }

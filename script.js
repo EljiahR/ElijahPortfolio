@@ -170,10 +170,10 @@ const changeDisplay = (pageToDisplay) => {
       mainDiv.style.marginLeft = "0px";
       break;
     case Pages.PROJECTS:
-      mainDiv.style.marginLeft = "-100%";
+      mainDiv.style.marginLeft = "calc(-100% - 50px)";
       break;
     case Pages.CONTACTS:
-      mainDiv.style.marginLeft = "-200%";
+      mainDiv.style.marginLeft = "calc(-200% - 100px)";
       break;
   }
 }

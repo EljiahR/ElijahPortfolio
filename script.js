@@ -164,16 +164,54 @@ const displayProject = (index) => {
 }
 
 const mainDiv = document.getElementById("main");
+const pageOneDiv = document.getElementById("page-1");
+const pageTwoDiv = document.getElementById("page-2");
+const pageThreeDiv = document.getElementById("page-3");
+const backgroundDiv = document.getElementById("background");
 const changeDisplay = (pageToDisplay) => {
   switch (pageToDisplay) {
     case Pages.HOME:
       mainDiv.style.marginLeft = "0px";
+      backgroundDiv.style.marginLeft = "0px";
+      togglePageOpactiy(1);
+      scrollToTop();
       break;
     case Pages.PROJECTS:
       mainDiv.style.marginLeft = "calc(-100% - 50px)";
+      backgroundDiv.style.marginLeft = "-25%";
+      togglePageOpactiy(2);
+      scrollToTop();
       break;
     case Pages.CONTACTS:
       mainDiv.style.marginLeft = "calc(-200% - 100px)";
+      backgroundDiv.style.marginLeft = "-50%";
+      togglePageOpactiy(3);
+      scrollToTop();
+      break;
+  }
+}
+
+const togglePageOpactiy = (pageNum) => {
+  switch (pageNum) {
+    case 1:
+      pageOneDiv.style.opacity = "1";
+      pageTwoDiv.style.opacity = "0";
+      pageThreeDiv.style.opacity = "0";
+      break;
+    case 2:
+      pageOneDiv.style.opacity = "0";
+      pageTwoDiv.style.opacity = "1";
+      pageThreeDiv.style.opacity = "0";
+      break;
+    case 3:
+      pageOneDiv.style.opacity = "0";
+      pageTwoDiv.style.opacity = "0";
+      pageThreeDiv.style.opacity = "1";
+      break;
+    default:
+      pageOneDiv.style.opacity = "1";
+      pageTwoDiv.style.opacity = "1";
+      pageThreeDiv.style.opacity = "1";
       break;
   }
 }

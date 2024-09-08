@@ -81,18 +81,6 @@ main {
   transition: 0.3s;
 }
 
-#contacts-page {
-  height: 100%;
-  width: 100%;
-  padding-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-
-
 #main-flow-wrapper {
   height: 100%;
   width: 100%;
@@ -260,6 +248,25 @@ main {
 
 #introduction h5 {
   font-size: 1rem;
+}
+
+#contacts-page {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+#contacts-container {
+  height: 500px;
+  width: 40%;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-bottom: 100px;
+  background-color: white;
+  box-shadow: #737373 7px 9px 5px 0px
 }
 
 #footer {

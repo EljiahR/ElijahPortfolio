@@ -256,17 +256,34 @@ main {
   padding-top: 100px;
 }
 
-#contacts-container {
+#contacts-sheet {
   height: 500px;
-  width: 40%;
+  width: 260px;
+
   min-width: 260px;
+
+  border-radius: 15px;
+  background-color: #297ea6;
+  background-image: linear-gradient(30deg, #205a7a 12%, transparent 12.5%, transparent 87%, #205a7a 87.5%, #205a7a), linear-gradient(150deg, #205a7a 12%, transparent 12.5%, transparent 87%, #205a7a 87.5%, #205a7a), linear-gradient(30deg, #205a7a 12%, transparent 12.5%, transparent 87%, #205a7a 87.5%, #205a7a), linear-gradient(150deg, #205a7a 12%, transparent 12.5%, transparent 87%, #205a7a 87.5%, #205a7a), linear-gradient(60deg, #205a7a77 25%, transparent 25.5%, transparent 75%, #205a7a77 75%, #205a7a77), linear-gradient(60deg, #205a7a77 25%, transparent 25.5%, transparent 75%, #205a7a77 75%, #205a7a77);
+
+  ;
+  background-size: 38px 67px;
+  background-position: 0 0, 0 0, 19px 33px, 19px 33px, 0 0, 19px 33px;
+}
+
+#contacts-container {
+  height: 100%;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   padding-bottom: 100px;
-  background-color: white;
-  box-shadow: #737373 7px 9px 5px 0px
+  background-image: linear-gradient(138deg, transparent 13%, #d1f0ff 50%, transparent 92%);
+  box-shadow: black 4px 6px 0;
 }
 
 #footer {

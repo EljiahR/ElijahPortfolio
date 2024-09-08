@@ -171,20 +171,20 @@ const backgroundDiv = document.getElementById("background");
 const changeDisplay = (pageToDisplay) => {
   switch (pageToDisplay) {
     case Pages.HOME:
-      mainDiv.style.marginLeft = "0px";
-      backgroundDiv.style.marginLeft = "0px";
+      mainDiv.style.transform = "translateX(0px)";
+      backgroundDiv.style.transform = "translateX(0px)";
       togglePageOpactiy(1);
       scrollToTop();
       break;
     case Pages.PROJECTS:
-      mainDiv.style.marginLeft = "calc(-100% - 50px)";
-      backgroundDiv.style.marginLeft = "-25%";
+      mainDiv.style.transform = "translateX(calc(-100% / 3 - 50px))";
+      backgroundDiv.style.transform = "translateX(calc(-100% / 6))";
       togglePageOpactiy(2);
       scrollToTop();
       break;
     case Pages.CONTACTS:
-      mainDiv.style.marginLeft = "calc(-200% - 100px)";
-      backgroundDiv.style.marginLeft = "-50%";
+      mainDiv.style.transform = "translateX(calc(-200% / 3 - 100px))";
+      backgroundDiv.style.transform = "translateX(calc(-100% / 3))";
       togglePageOpactiy(3);
       scrollToTop();
       break;

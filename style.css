@@ -407,7 +407,7 @@ main {
 }
 
 #cs-cabinet .cabinet-inside:has(+ .cabinet-front.open) .cabinet-inside-shadow {
-  top: -472px;
+  top: -529px;
 }
 
 #webdev-cabinet .cabinet-inside:has(+ .cabinet-front.open) .cabinet-inside-shadow {
@@ -604,9 +604,9 @@ main {
 }
 
 #cs-cabinet .cabinet-inside {
-  padding-bottom: 20px;
-  height: 510px;
-  margin-top: -340px;
+  padding-top: 50px;
+  height: 550px;
+  margin-top: -376px;
 }
 
 #webdev-cabinet .cabinet-inside {
